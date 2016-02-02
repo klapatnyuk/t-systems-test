@@ -20,7 +20,7 @@ import java.util.List;
 public class CalculatorImpl implements Calculator {
 
     @Override
-    public String evaluate(String statement) {
+    public final String evaluate(final String statement) {
 
         // Parse statement.
         List<Term> terms;
@@ -44,7 +44,8 @@ public class CalculatorImpl implements Calculator {
         double result;
         try {
             result = RPNCalculator.calculate(terms);
-        } catch (OrderException | TermException | ArithmeticException exception) {
+        } catch (OrderException | TermException
+                | ArithmeticException exception) {
             exception.printStackTrace();
             return null;
         }

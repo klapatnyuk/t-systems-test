@@ -8,7 +8,7 @@ import static com.tsystems.javaschool.tasks.calculator.SymbolImpl.OPERATOR;
 /**
  * @author klapatnyuk
  */
-public class Config {
+public final class Config {
 
     /**
      * Number of digits after dot in result string.
@@ -23,11 +23,15 @@ public class Config {
     /**
      * Regular expression pattern for entire statement.
      */
-    public static final Pattern PATTERN_STATEMENT = Pattern.compile("(" + OPERAND.getPattern()
-            + "|" + OPERATOR.getPattern() + ")+");
+    public static final Pattern PATTERN_STATEMENT = Pattern.compile("("
+            + OPERAND.getPattern() + "|" + OPERATOR.getPattern() + ")+");
 
     /**
      * Regular expression pattern for every term in statement.
      */
-    public static final Pattern PATTERN_PARSER = Pattern.compile(OPERAND.getPattern() + "|" + OPERATOR.getPattern());
+    public static final Pattern PATTERN_PARSER = Pattern.compile(OPERAND
+            .getPattern() + "|" + OPERATOR.getPattern());
+
+    private Config() {
+    }
 }

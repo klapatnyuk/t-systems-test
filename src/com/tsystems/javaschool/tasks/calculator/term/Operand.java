@@ -10,32 +10,32 @@ public class Operand implements Term {
     private final String sequence;
     private final double value;
 
-    public Operand(double value) {
-        this.sequence = "" + value;
-        this.value = value;
+    public Operand(final double newValue) {
+        this.sequence = "" + newValue;
+        this.value = newValue;
     }
 
-    public Operand(String sequence) {
-        this.sequence = sequence;
+    public Operand(final String newSequence) {
+        this.sequence = newSequence;
         this.value = Double.parseDouble(this.sequence);
     }
 
-    public double getValue() {
+    public final double getValue() {
         return this.value;
     }
 
     @Override
-    public SymbolImpl getSymbol() {
+    public final SymbolImpl getSymbol() {
         return SymbolImpl.OPERAND;
     }
 
     @Override
-    public String getSequence() {
+    public final String getSequence() {
         return this.sequence;
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return getSequence();
     }
 }

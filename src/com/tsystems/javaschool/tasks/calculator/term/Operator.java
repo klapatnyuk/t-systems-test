@@ -23,21 +23,23 @@ public enum Operator implements Symbol, Term {
     private final int priority;
     private Action action;
 
-    Operator(String sequence, int priority, Action action) {
-        this.sequence = sequence;
-        this.priority = priority;
-        this.action = action;
+    Operator(final String newSequence, final int newPriority,
+             final Action newAction) {
+        this.sequence = newSequence;
+        this.priority = newPriority;
+        this.action = newAction;
     }
 
-    Operator(String sequence, int priority) {
-        this(sequence, priority, null);
+    Operator(final String newSequence, final int newPriority) {
+        this(newSequence, newPriority, null);
     }
 
-    public double doAction(double f, double s) {
+    public double doAction(final double f, final double s) {
         return this.action.doAction(f, s);
     }
 
-    public static Operator getActionOf(String sequence) throws StatementException {
+    public static Operator getActionOf(final String sequence)
+            throws StatementException {
         for (Operator operator : Operator.values()) {
             if (operator.getSequence().equals(sequence)) {
                 return operator;
