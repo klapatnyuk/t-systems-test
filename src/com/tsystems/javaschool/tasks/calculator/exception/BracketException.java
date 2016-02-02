@@ -7,7 +7,7 @@ public class BracketException extends Exception {
 
     private static final long serialVersionUID = -5309838553074451289L;
 
-    public BracketException(String message) {
+    public BracketException(final String message) {
         super(message);
     }
 }
